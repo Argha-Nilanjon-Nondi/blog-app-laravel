@@ -6,11 +6,16 @@ Login
 <div class="mx-auto mt-20 w-96 log:w-5/6">
     <form class="bg-white shadow-lg shadow-black rounded px-8 pt-6 pb-8 mb-4" method="post" action="{{url('/login')}}">
         @csrf
+        @isset($invalid)
+        <div class="mb-4">
+            <p class="text-red-500 text-xs text-center italic">Username or password is invalid</p>
+        </div>
+        @endisset
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                 Username
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('username') border-red-500 @enderror" id="username" type="text" name="username" placeholder="Username">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('username') border-red-500 @enderror" id="username" type="text" name="username" value="{{old('username')}}" placeholder="Username">
             @error("username")
             <p class="text-red-500 text-xs italic">{{$message}}</p>
             @enderror
@@ -19,7 +24,7 @@ Login
             <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                 Password
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline @error('password') border-red-500 @enderror" id="password" type="password" name="password" placeholder="******************">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline @error('password') border-red-500 @enderror" id="password" type="password" name="password" value="{{old('password')}}" placeholder="******************">
             @error("password")
             <p class="text-red-500 text-xs italic">{{$message}}</p>
             @enderror

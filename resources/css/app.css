@@ -1,3 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@import 'fontawesome-free/css/fontawesome';
+@import 'fontawesome-free/css/regular';
+@import 'fontawesome-free/css/solid';
+@import 'fontawesome-free/css/brands';

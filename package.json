@@ -18,6 +18,7 @@
         "tailwindcss": "^3.0.18"
     },
     "dependencies": {
+        "fontawesome-free": "^1.0.1",
         "webpack": "^5.67.0"
     }
 }
