@@ -1,6 +1,6 @@
 @extends("layouts.main")
 @push("title")
-{{$post->blog_title}}
+Blog
 @endpush
 @section("content")
 <x-navbar json='{
@@ -18,6 +18,9 @@
                         "url":"/contact"
                     }
                 }' />
-<x-blog-page blogimg="{{$post->blog_img}}" blogtitle="{{$post->blog_title}}" blogcontent="{{$post->blog_content}}" />
+<div class="container-none flex flex-wrap p-2">
+    <x-admin-blog-card />
+</div>
 <x-footer />
+<script src="{{ asset('js/modal.js') }}"></script>
 @endsection

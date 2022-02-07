@@ -19,9 +19,10 @@ Blog
                     }
                 }' />
 <div class="container-none flex flex-wrap p-2">
-    <x-blog-card />
-    <x-blog-card />
-    <x-blog-card />
+    @foreach($blog as $post)
+    <x-blog-card blogid="{{$post->blog_id}}" blogimg="{{$post->blog_img}}" blogtitle="{{$post->blog_title}}" blogcontent="{{$post->blog_content}}" />
+    @endforeach
 </div>
-<x-footer/>
+{{$blog->links()}}
+<x-footer />
 @endsection
