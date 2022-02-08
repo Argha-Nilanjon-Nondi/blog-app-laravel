@@ -4,9 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use App\Models\Blog;
 
-class ValidateBlogId
+class ValidateBlogIDFormat
 {
     /**
      * Handle an incoming request.
@@ -17,18 +16,11 @@ class ValidateBlogId
      */
     public function handle(Request $request, Closure $next)
     {
-        
-
-        $post = Blog::where([
-            ["blog_id", "=", $request->id]
-        ]);
-
-        if ($post->count() == 0) {
-            return redirect("/admin/blog/99");
-        }
-
-        else{
+        if(is_numeric($request->id)==true){
             return $next($request);
         }
+
+        return redirect()->back();
+        
     }
 }

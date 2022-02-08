@@ -4,9 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use App\Models\Blog;
 
-class ValidateBlogId
+class ValidateAdminSession
 {
     /**
      * Handle an incoming request.
@@ -17,18 +16,12 @@ class ValidateBlogId
      */
     public function handle(Request $request, Closure $next)
     {
+        if($request->session()->exists("is_verified")==true){
+            if($request->session()->get("is_verified")==true){
+                return $next($request);
+            }
+        }
+        return redirect("/login");
         
-
-        $post = Blog::where([
-            ["blog_id", "=", $request->id]
-        ]);
-
-        if ($post->count() == 0) {
-            return redirect("/admin/blog/99");
-        }
-
-        else{
-            return $next($request);
-        }
     }
 }

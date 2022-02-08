@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\ValidateAdminSession;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -63,6 +64,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        "validate-blog-id"=> \App\Http\Middleware\ValidateBlogId::class
+        "validate-admin-session"=>\App\Http\Middleware\ValidateAdminSession::class,
+        "validate-blog-id-db"=> \App\Http\Middleware\ValidateBlogId::class,
+        "validate-blog-id-format" => \App\Http\Middleware\ValidateBlogIDFormat::class,
     ];
 }

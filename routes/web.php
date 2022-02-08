@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PublicBlogController;
@@ -17,17 +17,20 @@ use App\Http\Controllers\PublicBlogController;
 |
 */
 
+
+Route::get("/",[AdminController::class,"index"]);
 Route::get("/login", [FormController::class, "index"]);
 Route::post("/login", [FormController::class, "login"]);
-Route::get("/",[AdminController::class,"index"]);
-Route::resource("/blog",PublicBlogController::class)->only(['index', 'show'
-]);
+Route::get("/blog",[PublicBlogController::class,"index"]);
+Route::get("/blog/{id}", [PublicBlogController::class, "show"])->middleware(["validate-blog-id-format", "validate-blog-id-format"]);
 
-Route::group(["prefix" => "admin"], function () {
-    Route::get("/", function () {
-        return view("blog");
+Route::group(["prefix" => "admin","middleware"=>["validate-admin-session"]], function () {
+    Route::resource("/",AdminController::class);
+    Route::group(["prefix"=>"blog"],function (){
+        Route::get("/",[AdminBlogController::class,"blogUI"]);
+        Route::get("/{id}/update/", [AdminBlogController::class, "postUpdateUI"])->middleware(["validate-blog-id-format","validate-blog-id-format"]);
+        Route::get("/{id}/delete", [AdminBlogController::class, "postDelete"])->middleware(["validate-blog-id-format","validate-blog-id-format"]);
     });
-    Route::resource("/blog",BlogController::class);
 });
 
 

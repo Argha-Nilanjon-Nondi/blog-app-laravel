@@ -8,19 +8,22 @@ Blog
                       "text":"Home",
                       "url":"/home"
                     },
-                    "blog":{
-                        "text":"Blog",
-                        "url":"/blog",
+                    "view_post_collection":{
+                        "text":"View Post",
+                        "url":"/admin/blog",
                         "active":"true"
                     },
-                    "contact":{
-                        "text":"Contact",
-                        "url":"/contact"
+                    "add_post":{
+                        "text":"Add Post",
+                        "url":"/admin/blog/create"
                     }
                 }' />
 <div class="container-none flex flex-wrap p-2">
-    <x-admin-blog-card />
+    @foreach($blog as $post)
+    <x-admin-blog-card blogid="{{$post->blog_id}}" blogimg="{{$post->blog_img}}" blogtitle="{{$post->blog_title}}" blogcontent="{{$post->blog_content}}" />
+    @endforeach
 </div>
+{{$blog->links()}}
 <x-footer />
 <script src="{{ asset('js/modal.js') }}"></script>
 @endsection
