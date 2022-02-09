@@ -10,7 +10,8 @@ class PublicBlogController extends Controller
 {
     public function index()
     {
-        $data= Blog::select("blog_id", "blog_title", DB::raw("SUBSTRING(blog_content,1,100) as blog_content"), "blog_img")
+        $data = Blog::select("blog_id", DB::raw("SUBSTRING(blog_title,1,50) as blog_title"), DB::raw("SUBSTRING(blog_content,1,80) as blog_content"), "blog_img")
+        ->orderBy("created_at", "desc")
         ->paginate(5);
         return view("blog",["blog"=>$data]);
     }

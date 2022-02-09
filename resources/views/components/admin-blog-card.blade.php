@@ -1,8 +1,8 @@
     <div class="bg-white shadow-md border border-gray-200 rounded-lg blog-card-max:w-5/6 blog-card-min:w-[35rem]  blog-card-min:flex blog-card-min:flex-row mb-5 mx-auto m-1 ">
-        <img class="rounded-t-lg blog-card-min:w-72" src="{{ asset('/img') }}/{{ $blog_img }}" alt="">
+        <img class="rounded-t-lg blog-card-min:w-72" src="{{ asset('images') }}/{{ $blog_img }}" alt="">
         <div class="p-5">
             <a href="#">
-                <h5 class="text-gray-900 font-bold text-xl tracking-tight mb-2">{{ $blog_title }}</h5>
+                <h5 class="text-gray-900 font-bold text-xl tracking-tight mb-2">{{ $blog_title }}...</h5>
             </a>
             <p class="font-normal text-gray-700 mb-3">{{ $blog_content }}</p>
             <div class="flex justify-center flex-wrap">

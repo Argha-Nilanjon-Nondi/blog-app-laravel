@@ -16,6 +16,10 @@ Blog
                     "add_post":{
                         "text":"Add Post",
                         "url":"/admin/blog/create"
+                    },
+                    "logout":{
+                        "text":"Logout",
+                        "url":"/admin/logout"
                     }
                 }' />
 <div class="container-none flex flex-wrap p-2">

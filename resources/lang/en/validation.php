@@ -159,7 +159,10 @@ return [
 
     'attributes' => [
         "username"=>"Username",
-        "password"=>"Password"
+        "password"=>"Password",
+        "title"=>"Title",
+        "description"=>"Description",
+        "image"=>"Image"
     ],
 
 ];

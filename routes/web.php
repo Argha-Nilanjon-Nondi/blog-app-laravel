@@ -28,6 +28,8 @@ Route::group(["prefix" => "admin","middleware"=>["validate-admin-session"]], fun
     Route::resource("/",AdminController::class);
     Route::group(["prefix"=>"blog"],function (){
         Route::get("/",[AdminBlogController::class,"blogUI"]);
+        Route::get("/create",[AdminBlogController::class,"postCreateUI"]);
+        Route::post("/create", [AdminBlogController::class, "postStore"]);
         Route::get("/{id}/update/", [AdminBlogController::class, "postUpdateUI"])->middleware(["validate-blog-id-format","validate-blog-id-format"]);
         Route::get("/{id}/delete", [AdminBlogController::class, "postDelete"])->middleware(["validate-blog-id-format","validate-blog-id-format"]);
     });
