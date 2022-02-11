@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index(Request $request)
+    public function logout(Request $request)
     {
-        return $request->session()->all();
+        $request->session()->flush();
+        return redirect("/login");
     }
 }

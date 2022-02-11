@@ -29,7 +29,7 @@ class FormController extends Controller
 
         $request->session()->put("is_verified",true);
 
-        return redirect("/dashboard");
+        return redirect("/admin/blog");
     
     }
 }
