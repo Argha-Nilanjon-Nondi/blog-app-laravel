@@ -6,7 +6,7 @@ Blog
 <x-navbar json='{
                   "home":{
                       "text":"Home",
-                      "url":"/home"
+                      "url":"#"
                     },
                     "view_post_collection":{
                         "text":"View Post",
@@ -27,7 +27,7 @@ Blog
     <x-admin-blog-card blogid="{{$post->blog_id}}" blogimg="{{$post->blog_img}}" blogtitle="{{$post->blog_title}}" blogcontent="{{$post->blog_content}}" />
     @endforeach
 </div>
-{{$blog->links()}}
+{{$blog->links('pagination::custom')}}
 <x-footer />
 <script src="{{ asset('js/modal.js') }}"></script>
 @endsection

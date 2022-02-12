@@ -6,7 +6,7 @@ Blog
 <x-navbar json='{
                   "home":{
                       "text":"Home",
-                      "url":"/home"
+                      "url":"#"
                     },
                     "blog":{
                         "text":"Blog",
@@ -15,7 +15,7 @@ Blog
                     },
                     "contact":{
                         "text":"Contact",
-                        "url":"/contact"
+                        "url":"#"
                     }
                 }' />
 <div class="container-none flex flex-wrap p-2">
@@ -23,6 +23,6 @@ Blog
     <x-blog-card blogid="{{$post->blog_id}}" blogimg="{{$post->blog_img}}" blogtitle="{{$post->blog_title}}" blogcontent="{{$post->blog_content}}" />
     @endforeach
 </div>
-{{$blog->links()}}
+{{$blog->links('pagination::custom')}}
 <x-footer />
 @endsection

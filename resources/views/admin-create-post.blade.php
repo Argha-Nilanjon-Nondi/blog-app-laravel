@@ -6,7 +6,7 @@ Create Post
 <x-navbar json='{
                   "home":{
                       "text":"Home",
-                      "url":"/home"
+                      "url":"#"
                     },
                     "view_post_collection":{
                         "text":"View Post",

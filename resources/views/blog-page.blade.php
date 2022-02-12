@@ -6,7 +6,7 @@
 <x-navbar json='{
                   "home":{
                       "text":"Home",
-                      "url":"/home"
+                      "url":"#"
                     },
                     "blog":{
                         "text":"Blog",
@@ -15,7 +15,7 @@
                     },
                     "contact":{
                         "text":"Contact",
-                        "url":"/contact"
+                        "url":"#"
                     }
                 }' />
 <x-blog-page blogimg="{{$post->blog_img}}" blogtitle="{{$post->blog_title}}" blogcontent="{{$post->blog_content}}" />
