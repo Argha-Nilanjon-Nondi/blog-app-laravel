@@ -49,7 +49,7 @@ php artisan serve
 - default hostname is localhost
 
 ## Screenshots
-### Blog for all user
+### Blog for all user (http://localhost:8000/blog)
 
 ![AppScreenshort](https://github.com/Argha-Nilanjon-Nondi/blog-app-laravel/blob/master/screenshot/public_blog.png?raw=true)
 
@@ -62,7 +62,7 @@ php artisan serve
 <br>
 
 ## Admin
-### Login
+### Login (http://localhost:8000/login)
 
 ![AppScreenshort](https://github.com/Argha-Nilanjon-Nondi/blog-app-laravel/blob/master/screenshot/login.png?raw=true)
 
