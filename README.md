@@ -31,6 +31,11 @@ It is a blog app.
 php artisan migrate
 php artisan db:seed
 ```
+## NPM setup
+```bash
+npm install
+```
+
 ## Deployment
 
 To strat the node server for tailwind css
