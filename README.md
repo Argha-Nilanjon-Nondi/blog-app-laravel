@@ -95,6 +95,8 @@ php artisan serve
 ## Future Plan
 - Add a home page for both user and admin
 - Add a contact form
-- Add a setting panel ## License
+- Add a setting panel 
+
+## License
 - You can't use it for commercial usage
 - You can use it just for eductional usage
