@@ -6,7 +6,7 @@ Blog
 <x-navbar json='{
                   "home":{
                       "text":"Home",
-                      "url":"#"
+                      "url":"/admin/"
                     },
                     "view_post_collection":{
                         "text":"View Post",

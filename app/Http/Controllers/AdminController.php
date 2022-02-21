@@ -12,4 +12,8 @@ class AdminController extends Controller
         $request->session()->flush();
         return redirect("/login");
     }
+
+    public function home(){
+        return view("admin-home"); 
+    }
 }

@@ -4,9 +4,11 @@ module.exports = {
   theme: {
     screens: {
       "log": { "min": "200px", "max": "452px" },
-      "navbar-head-text":{"max":"333px"},
-      "blog-card-min":{"min":"666px"},
+      "navbar-head-text": { "max": "333px" },
+      "blog-card-min": { "min": "666px" },
       "blog-card-max": { "max": "665px" },
+      "header": { "max": "767px" },
+      "header-btn-sm":{"max":"243px"},
       'sm': '640px',
 
       'md': '768px',
@@ -17,9 +19,14 @@ module.exports = {
 
       '2xl': '1536px',
     },
-    extend: {},
+    extend: {
+      height:{
+        "inherit":"inherit",
+        "100":"29rem"
+      }
+    },
   },
   plugins: [
-   
+
   ],
 }

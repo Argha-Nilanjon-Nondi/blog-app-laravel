@@ -1,6 +1,6 @@
 @extends("layouts.main")
 @push("title")
-{{$post->blog_title}}
+Contact
 @endpush
 @section("content")
 <x-navbar json='{
@@ -10,18 +10,19 @@
                     },
                     "blog":{
                         "text":"Blog",
-                        "url":"/blog",
-                        "active":"true"
+                        "url":"/blog"
                     },
-                     "about":{
+                    "about":{
                         "text":"About",
                         "url":"/about"
                     },
                     "contact":{
                         "text":"Contact",
-                        "url":"/contact"
+                        "url":"/contact",
+                       "active":"true"
                     }
                 }' />
-<x-blog-page blogimg="{{$post->blog_img}}" blogtitle="{{$post->blog_title}}" blogcontent="{{$post->blog_content}}" />
+
+
 <x-footer />
 @endsection

@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PublicBlogController;
+use App\Http\Controllers\PublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,9 @@ use App\Http\Controllers\PublicBlogController;
 */
 
 
-Route::get("/",[AdminController::class,"index"]);
+Route::get("/",[PublicController::class,"home"]);
+Route::get("/about", [PublicController::class, "about"]);
+Route::get("/contact", [PublicController::class, "contact"]);
 Route::get("/login", [FormController::class, "index"]);
 Route::post("/login", [FormController::class, "login"]);
 Route::get("/blog",[PublicBlogController::class,"index"]);
@@ -26,6 +29,7 @@ Route::get("/blog/{id}", [PublicBlogController::class, "show"])->middleware(["va
 
 Route::group(["prefix" => "admin","middleware"=>["validate-admin-session"]], function () {
     Route::get("/logout",[AdminController::class,"logout"]);
+    Route::get("/",[AdminController::class,"home"]);
     Route::group(["prefix"=>"blog"],function (){
         Route::get("/",[AdminBlogController::class,"blogUI"]);
         Route::get("/create",[AdminBlogController::class,"postCreateUI"]);

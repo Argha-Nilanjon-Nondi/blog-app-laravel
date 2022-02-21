@@ -6,7 +6,7 @@ Update Post
 <x-navbar json='{
                   "home":{
                       "text":"Home",
-                      "url":"/home"
+                      "url":"/admin/"
                     },
                     "view_post_collection":{
                         "text":"View Post",

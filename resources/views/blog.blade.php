@@ -6,16 +6,20 @@ Blog
 <x-navbar json='{
                   "home":{
                       "text":"Home",
-                      "url":"#"
+                      "url":"/"
                     },
                     "blog":{
                         "text":"Blog",
                         "url":"/blog",
                         "active":"true"
                     },
+                     "about":{
+                        "text":"About",
+                        "url":"/about"
+                    },
                     "contact":{
                         "text":"Contact",
-                        "url":"#"
+                        "url":"/contact"
                     }
                 }' />
 <div class="container-none flex flex-wrap p-2">
