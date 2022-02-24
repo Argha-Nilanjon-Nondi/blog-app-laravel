@@ -21,7 +21,8 @@ use App\Http\Controllers\PublicController;
 
 Route::get("/",[PublicController::class,"home"]);
 Route::get("/about", [PublicController::class, "about"]);
-Route::get("/contact", [PublicController::class, "contact"]);
+Route::get("/contact", [PublicController::class, "view_contact"]);
+Route::post("/contact", [PublicController::class, "store_contact"]);
 Route::get("/login", [FormController::class, "index"]);
 Route::post("/login", [FormController::class, "login"]);
 Route::get("/blog",[PublicBlogController::class,"index"]);

@@ -162,7 +162,10 @@ return [
         "password"=>"Password",
         "title"=>"Title",
         "description"=>"Description",
-        "image"=>"Image"
+        "image"=>"Image",
+        "email"=>"Email",
+        "name"=>"Name",
+        "content"=>"Content"
     ],
 
 ];

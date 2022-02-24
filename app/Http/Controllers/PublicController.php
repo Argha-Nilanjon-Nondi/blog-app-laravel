@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Blog;
+use App\Models\Contact;
+use App\Rules\NiceName;
 
 class PublicController extends Controller
 {
@@ -20,7 +22,27 @@ class PublicController extends Controller
         return view("about");
     }
 
-    public function contact(){
+    public function view_contact(){
         return view("contact");
+    }
+
+    public function store_contact(Request $request){
+        $request->validate([
+            "name" => ["required", "min:5",new NiceName],
+            "email" => ["required", "email"],
+            "content"=>["required", "alpha_dash"]
+        ]);
+
+        $name=$request->name;
+        $email=$request->email;
+        $content=$request->content;
+
+        $contact=new Contact();
+        $contact->contact_name=$name;
+        $contact->contact_email=$email;
+        $contact->contact_content=$content;
+        $contact->save();
+
+        return view("contact",["alertStatus"=>true]);
     }
 }
