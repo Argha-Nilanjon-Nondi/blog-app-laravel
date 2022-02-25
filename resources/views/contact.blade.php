@@ -30,7 +30,7 @@ Contact
 <x-alert.success message="Message received"></x-alert.success>
 @endisset
 <section class="text-gray-600 body-font relative">
-    <div class="px-5 py-24 mx-auto">
+    <div class="px-5 w-[70%] contact-form-b:w-[93%] contact-form-a:w-full py-24 mx-auto">
         <div class="mx-auto">
             <form class="flex flex-wrap -m-2" method="post" action="{{url('/contact')}}">
                 @csrf

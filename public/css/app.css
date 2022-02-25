@@ -5287,6 +5287,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 83.333333%;
 }
 
+.w-\[70\%\] {
+  width: 70%;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -6182,10 +6186,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 25rem;
   }
 }
-@media (max-width: 436px) {
+@media (max-width: 527px) {
 
   .contact-form-a\:w-full {
     width: 100%;
+  }
+}
+@media (min-width: 475px) and (max-width: 754px) {
+
+  .contact-form-b\:w-\[93\%\] {
+    width: 93%;
   }
 }
 @media (min-width: 640px) {
@@ -6356,6 +6366,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 
     .md\:container {
       max-width: 350px;
+    }
+  }
+
+  @media (min-width: 475px) {
+
+    .md\:container {
+      max-width: 475px;
     }
   }
 

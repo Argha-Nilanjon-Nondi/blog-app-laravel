@@ -6,6 +6,9 @@ It is a blog app.
 
 
 ## Features
+- Home
+- About
+- Contact
 - Login
 - Logout
 - Admin
@@ -53,8 +56,35 @@ php artisan serve
 - default port is 8000 
 - default hostname is localhost
 
+<br>
+<br>
+
+## Login
+```bash
+   username: admin_blog_app
+   password: admin1234
+```
+
 ## Screenshots
-### Blog for all user (http://localhost:8000/blog)
+### Home
+
+![AppScreenshort](https://github.com/Argha-Nilanjon-Nondi/blog-app-laravel/blob/master/screenshot/home.png?raw=true)
+
+<br>
+
+### About
+
+![AppScreenshort](https://github.com/Argha-Nilanjon-Nondi/blog-app-laravel/blob/master/screenshot/about.png?raw=true)
+
+<br>
+
+### Contact
+
+![AppScreenshort](https://github.com/Argha-Nilanjon-Nondi/blog-app-laravel/blob/master/screenshot/contact.png?raw=true)
+
+<br>
+
+### Blog for all user 
 
 ![AppScreenshort](https://github.com/Argha-Nilanjon-Nondi/blog-app-laravel/blob/master/screenshot/public_blog.png?raw=true)
 
@@ -98,8 +128,8 @@ php artisan serve
 <br>
 
 ## Future Plan
-- Add a home page for both user and admin
-- Add a contact form
+- Add a home page for admin
+- Add a contact pannel for admin
 - Add a setting panel 
 
 ## License

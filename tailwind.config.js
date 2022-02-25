@@ -14,7 +14,8 @@ module.exports = {
       "about-box-a": { "max":"1124px"},
       "about-box-b": { "max": "350px" },
       "about-box-c": { "min": "350px" ,"max":"454px" },
-      "contact-form-a": { "max":"436px"},
+      "contact-form-a": { "max":"527px"},
+      "contact-form-b": { "min":"475px","max":"754px"},
       'sm': '640px',
 
       'md': '768px',
